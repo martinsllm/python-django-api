@@ -23,6 +23,7 @@
       {{ form|crispy }}
 
       <button type="submit" class="btn btn-success">Salvar</button>
+      <a href="{% url "todo_list" %}" class="btn btn-danger">Cancelar</a>
   </form>
 {% endblock content %}
 </html>
