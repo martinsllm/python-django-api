@@ -6,6 +6,7 @@ from .models import Todo
 
 
 class TodoListView(ListView):
+    paginate_by = 4
     model = Todo
 
 

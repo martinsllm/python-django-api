@@ -38,9 +38,22 @@
                 {% endfor %}
             </tbody>
         </table>
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1" class="btn btn-outline-primary btn-sm">&laquo;</a>
+                    <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-primary btn-sm">{{ page_obj.previous_page_number }}</a>
+                {% endif %}
+        
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-primary btn-sm">{{page_obj.next_page_number}} </a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-primary btn-sm">&raquo;</a>
+                {% endif %}
+            </span>
+        </div>
     {% else %}
         <p>Não há tarefas registradas</p>
     {% endif %}
     
-    <a href="{% url 'todo_create' %}" class="btn btn-primary">Nova Tarefa</a>
+    <a href="{% url 'todo_create' %}" class="btn btn-success mt-3">Nova Tarefa</a>
 {% endblock content %}
