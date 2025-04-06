@@ -9,3 +9,6 @@ class Todo(models.Model):
     deadline = models.DateField(
         verbose_name="Data de Entrega", null=False, blank=False)
     finished_at = models.DateField(null=True)
+
+    class Meta:
+        ordering = ["deadline"]
